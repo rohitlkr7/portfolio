@@ -4,7 +4,6 @@ import About from "./sections/About.jsx";
 import Skills from "./sections/Skills.jsx";
 import Project from "./sections/Project.jsx";
 import Contact from "./sections/Contact.jsx";
-import PartBackgrounds from "./Components/PartBackgrounds.jsx";
 import CustomCursor from "./Components/CustomCursor.jsx";
 
 

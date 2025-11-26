@@ -1,0 +1,57 @@
+import React from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiX } from "react-icons/fi";
+
+const OverlayMenu = ({ open, onClose }) => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
+  const origin =isMobile ? "95% 8%" : "50% 8%";
+
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          initial={{ clipPath: `circle(0% at ${origin})` }}
+          animate={{ clipPath: `circle(150% at ${origin})` }}
+          exit={{ clipPath: `circle(0% at ${origin})` }}
+          transition={{duration:0.7 , ease:[0.4,0 ,0.2,1]}}
+          className="fixed inset-0 bg-black/75 flex items-center justify-center z-50 backdrop-blur-md"
+        >
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            aria-label="Close Menu"
+            className="absolute top-6 right-6 text-white text-3xl"
+          >
+            <FiX />
+          </button>
+
+          {/* Menu Items */}
+          <ul className="space-y-6 text-center">
+            {["Home", "About", "Skills", "Project", "Contact"].map(
+              (item, index) => (
+                <motion.li
+                  key={item}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ delay: 0.25 + index * 0.1 }}
+                >
+                  <a
+                    href={`#${item.toLowerCase()}`}
+                    onClick={onClose}
+                    className="text-4xl text-white font-semibold hover:text-pink-400 transition-colors duration-300"
+                  >
+                    {item}
+                  </a>
+                </motion.li>
+              )
+            )}
+          </ul>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+};
+
+export default OverlayMenu;

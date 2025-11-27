@@ -5,22 +5,30 @@ import Skills from "./sections/Skills.jsx";
 import Project from "./sections/Project.jsx";
 import Contact from "./sections/Contact.jsx";
 import CustomCursor from "./Components/CustomCursor.jsx";
-
+import { useState } from "react";
+import IntroAnimation from "./Components/IntroAnimation.jsx";
+import { Routes, Route } from "react-router-dom";
 
 export default function App() {
+  const [introDone, setintroDone] = useState(false);
+
   return (
     <>
-      <div>
-        {/* <PartBackgrounds/> */}
-        <CustomCursor/>
+      {!introDone && <IntroAnimation onFinish={() => setintroDone(true)} />}
+      {introDone && (
+        <div className="relative gradient text-white">
+          <CustomCursor />
 
-        <Navbar/>
-        <Home/>
-        {/* <About/>
-        <Skills/>
-        <Project/>  
-        <Contact/> */}
-      </div>
+          <Navbar />
+          <Home />
+          <About/>
+          {/* <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/project" element={<Project />} />
+          </Routes> */}
+        </div>
+      )}
     </>
   );
 }

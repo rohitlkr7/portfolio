@@ -57,7 +57,7 @@ const Navbar = () => {
         // Hide again after 3 seconds
         timerId.current = setTimeout(() => {
           setVisible(false);
-        },3000);
+        },9000);
       }
 
       lastScrollY.current = currentScrollY;

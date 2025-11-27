@@ -16,10 +16,10 @@ export default function App() {
 
         <Navbar/>
         <Home/>
-        <About/>
+        {/* <About/>
         <Skills/>
         <Project/>  
-        <Contact/>
+        <Contact/> */}
       </div>
     </>
   );

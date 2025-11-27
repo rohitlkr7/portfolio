@@ -73,7 +73,7 @@ export default function Home() {
       {/* Text Section */}
       <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2">
         <div className=" flex flex-col justify-center h-full text-center lg:text-left relative">
-          <div className=" lg:ml-16 w-full lg:pr-24 mx-auto max-w-3xl">
+          <div className="lg: lg:mt-16 lg:ml-16 w-full lg:pr-24 mx-auto max-w-3xl">
             <motion.div
               className="mb-3 text-xl sm:text-2xl md:text-3xl lg:text-3xl font-semibold text-white tracking-wide min-h-[1.6rem]"
               initial={{ opacity: 0, y: 12 }}
@@ -112,7 +112,7 @@ export default function Home() {
               real-world projects.”
             </motion.p>
             <motion.div
-              className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6"
+              className="mt-4 flex flex-wrap items-center justify-center lg:justify-start gap-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -134,10 +134,25 @@ export default function Home() {
               </a>
             </motion.div>
           </div>
+          </div>
 
-          
-          
-        </div>
+          <div className="relative hidden lg:block">
+            <div className="absolute top-1/2 -translate-y-1/2 pointer-events-none"
+              style={{right:"70px" , width: "min(22vw , 410px)" , height: "min(40vw , 760px)",borderRadius:"50%",
+               filter : "blur(38px)" ,opacity : 0.32 ,
+               background: "conic-gradient(from 0deg ,#1cd8d2 , #00bf8f ,#302b63 ,#1cd8d2 "
+              }}
+              
+            />
+            <motion.img src={Avtar} alt="Rohit Sharma" 
+               className="absolute top-1/2 -translate-y-1/2 object-contain select-none pointer-events-none"
+               style={{right:"-20px" , width:"min(45vw, 780px)" , maxHeight:"90vh"}}
+               initial={{opacity:0 ,y:40 , scale:0.98}}
+               animate={{opacity:1 ,y:0 ,scale:1}}
+               transition={{delay:0.2 , duration:0.8}}
+            />
+          </div>
+
       </div>
     </section>
   );

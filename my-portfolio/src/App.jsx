@@ -8,6 +8,7 @@ import CustomCursor from "./Components/CustomCursor.jsx";
 import { useState } from "react";
 import IntroAnimation from "./Components/IntroAnimation.jsx";
 import { Routes, Route } from "react-router-dom";
+import Footer from "./sections/Footer.jsx";
 
 export default function App() {
   const [introDone, setintroDone] = useState(false);
@@ -22,6 +23,10 @@ export default function App() {
           <Navbar />
           <Home />
           <About/>
+          <Skills/>
+          <Project/>
+          <Contact/>
+          <Footer/>
           {/* <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

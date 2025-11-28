@@ -47,30 +47,10 @@ export default function Home() {
       <section id="Home" className=" w-full h-screen bg-black overflow-hidden relative">
         <PartBackgrounds/>
         {/* Glow Background */}
-        <div className="absolute inset-0">
-          
-          <div
-            className="absolute -top-32 -left-30 
-            w-[70vw] sm:w-[50vw] md:w-[40vw] 
-            h-[70vw] sm:h-[50vw] md:h-[40vw]
-            max-w-[500px] max-h-[500px]
-            rounded-full bg-linear-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-            opacity-30 sm:opacity-30 md:opacity-20
-            blur-[100px] sm:blur-[130px] md:blur-[150px]
-            animate-pulse"
-          ></div>
-
-          <div
-            className="absolute bottom-0 right-0 
-            w-[70vw] sm:w-[50vw] md:w-[40vw] 
-            h-[70vw] sm:h-[50vw] md:h-[40vw]
-            max-w-[500px] max-h-[500px]
-            rounded-full bg-linear-to-r from-[#302b63] via-[#00bf8f] to-[#1cd8d2]
-            opacity-30 sm:opacity-30 md:opacity-20
-            blur-[100px] sm:blur-[130px] md:blur-[150px]
-            animate-pulse delay-500"
-          ></div>
-        </div>
+         <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-20 w-[70vw] h-[70vw] sm:w-[40vw] sm:h-[40vw] bg-linear-to-r from-cyan-600 to-purple-600 opacity-20 blur-[100px] rounded-full animate-pulse"></div>
+        <div className="absolute bottom-0 right-0 w-[70vw] h-[70vw] sm:w-[40vw] sm:h-[40vw] bg-linear-to-r from-purple-500 to-cyan-400 opacity-20 blur-[100px] rounded-full animate-pulse delay-500"></div>
+      </div>
 
         {/* Text Section */}
         <div className="relative z-10 h-full w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2">

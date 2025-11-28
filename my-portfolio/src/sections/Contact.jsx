@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import PartBackgrounds from "../Components/PartBackgrounds"
 
 const Contact = () => {
   const form = useRef();
@@ -33,12 +34,13 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="relative min-h-screen w-full bg-black text-white flex items-center justify-center px-6 overflow-hidden"
+      className="relative py-20  h-screen w-full bg-black text-white flex items-center justify-center px-6 overflow-hidden"
     >
+      <PartBackgrounds/>
       {/* Background Blobs */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute top-10 left-20 w-[40vw] h-[40vw] bg-cyan-400/30 blur-[150px] rounded-full animate-pulse"></div>
-        <div className="absolute bottom-10 right-20 w-[35vw] h-[35vw] bg-purple-500/20 blur-[150px] rounded-full animate-pulse"></div>
+     <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute -top-32 -left-20 w-[70vw] h-[70vw] sm:w-[40vw] sm:h-[40vw] bg-linear-to-r from-cyan-600 to-purple-600 opacity-20 blur-[100px] rounded-full animate-pulse"></div>
+        {/* <div className="absolute bottom-0 right-0 w-[70vw] h-[70vw] sm:w-[40vw] sm:h-[40vw] bg-linear-to-r from-purple-500 to-cyan-400 opacity-20 blur-[100px] rounded-full animate-pulse delay-500"></div> */}
       </div>
 
       <motion.div
